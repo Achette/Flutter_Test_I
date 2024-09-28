@@ -1,34 +1,35 @@
 import 'package:flutter/material.dart';
 import '../models/transfer.dart';
 import 'transfer-item.dart';
-import '../screens/transfer-form.dart';
+import 'transfer-form.dart';
 
-class ListaTransferencia extends StatefulWidget {
-  final List<Transfer> _transferencias = [];
+class TransferList extends StatefulWidget {
+  final List<Transfer> _transfers = [];
 
-  ListaTransferencia({super.key});
+  TransferList({super.key});
 
   @override
   State<StatefulWidget> createState() {
-    return ListaTransferenciasState();
+    return TransferListsState();
   }
 }
 
-class ListaTransferenciasState extends State<ListaTransferencia> {
+class TransferListsState extends State<TransferList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           "Transferências",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color.fromRGBO(31, 104, 22, 1),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: ListView.builder(
-          itemCount: widget._transferencias.length,
+          itemCount: widget._transfers.length,
           itemBuilder: (context, indice) {
-            final transferencia = widget._transferencias[indice];
+            final transferencia = widget._transfers[indice];
             return TransferItem(transferencia);
           }),
       floatingActionButton: FloatingActionButton(
@@ -42,12 +43,12 @@ class ListaTransferenciasState extends State<ListaTransferencia> {
           future.then((transferenciaRecebida) {
             if (transferenciaRecebida != null) {
               setState(() {
-                widget._transferencias.add(transferenciaRecebida);
+                widget._transfers.add(transferenciaRecebida);
               });
             }
           });
         },
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color.fromRGBO(31, 104, 22, 1),
         child: const Icon(
           Icons.add_circle_rounded,
           size: 35,

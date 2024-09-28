@@ -3,7 +3,8 @@ import 'editor.dart';
 import '../models/transfer.dart';
 
 class TransferForm extends StatelessWidget {
-  final TextEditingController _controllerCampoNumeroConta = TextEditingController();
+  final TextEditingController _controllerCampoNumeroConta =
+      TextEditingController();
   final TextEditingController _controllerCampoValor = TextEditingController();
 
   TransferForm({super.key});
@@ -16,20 +17,26 @@ class TransferForm extends StatelessWidget {
           "Nova Transferência",
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color.fromRGBO(31, 104, 22, 1),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Column(
         children: [
           Editor(
-            controlador: _controllerCampoNumeroConta,
-            rotulo: 'Número da conta',
-            dica: '0000',
+            controller: _controllerCampoNumeroConta,
+            label: 'Número da conta',
+            hint: '1234',
+            icon: Icons.account_balance_rounded,
+            iconColor: const Color.fromRGBO(31, 104, 22, 1),
+            keyboardType: TextInputType.number,
           ),
           Editor(
-            controlador: _controllerCampoValor,
-            rotulo: 'Valor',
-            dica: '0.00',
-            icone: Icons.monetization_on,
+            controller: _controllerCampoValor,
+            label: 'Valor',
+            hint: '0.00',
+            icon: Icons.monetization_on_rounded,
+            iconColor: const Color.fromRGBO(31, 104, 22, 1),
+            keyboardType: TextInputType.number,
           ),
           ElevatedButton(
             onPressed: () {
@@ -39,8 +46,8 @@ class TransferForm extends StatelessWidget {
                 _controllerCampoValor,
               );
             },
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.blue),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromRGBO(31, 104, 22, 1),
             ),
             child: const Text(
               'Confirmar',
