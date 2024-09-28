@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../models/transferencia.dart';
+import '../models/transfer.dart';
 
-class ItemTransferencia extends StatelessWidget {
-  final Transferencia _transferencia;
+class TransferItem extends StatelessWidget {
+  final Transfer _transferencia;
 
-  const ItemTransferencia(this._transferencia, {super.key});
+  const TransferItem(this._transferencia, {super.key});
 
   @override
   Widget build(BuildContext context) {

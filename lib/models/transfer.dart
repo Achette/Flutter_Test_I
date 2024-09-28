@@ -1,8 +1,8 @@
-class Transferencia {
+class Transfer {
   final double valor;
   final int numeroConta;
 
-  Transferencia(this.valor, this.numeroConta);
+  Transfer(this.valor, this.numeroConta);
 
   @override
   String toString() {
