@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './components/transfer-list.dart';
+import 'package:my_app/screens/dashboard.dart';
+
 
 void main() => runApp(const Banco());
 
@@ -8,8 +9,8 @@ class Banco extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ListaTransferencia(),
+    return const MaterialApp(
+      home: Dashboard(),
     );
   }
 }
