@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import '../components/editor.dart';
-import '../models/transferencia.dart';
+import '../models/transfer.dart';
 
-class FormularioTransferencia extends StatelessWidget {
+class TransferForm extends StatelessWidget {
   final TextEditingController _controllerCampoNumeroConta = TextEditingController();
   final TextEditingController _controllerCampoValor = TextEditingController();
 
-  FormularioTransferencia({super.key});
+  TransferForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class FormularioTransferencia extends StatelessWidget {
     final double? valor = double.tryParse(controllerCampoValor.text);
 
     if (numeroConta != null && valor != null) {
-      final transferenciaCriada = Transferencia(valor, numeroConta);
+      final transferenciaCriada = Transfer(valor, numeroConta);
       Navigator.pop(context, transferenciaCriada);
     }
   }

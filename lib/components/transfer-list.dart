@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../models/transferencia.dart';
-import '../components/item_transferencia.dart';
-import '../screens/formulario-transferencia.dart';
+import '../models/transfer.dart';
+import 'transfer-item.dart';
+import '../screens/transfer-form.dart';
 
 class ListaTransferencia extends StatefulWidget {
-  final List<Transferencia> _transferencias = [];
+  final List<Transfer> _transferencias = [];
 
   ListaTransferencia({super.key});
 
@@ -29,14 +29,14 @@ class ListaTransferenciasState extends State<ListaTransferencia> {
           itemCount: widget._transferencias.length,
           itemBuilder: (context, indice) {
             final transferencia = widget._transferencias[indice];
-            return ItemTransferencia(transferencia);
+            return TransferItem(transferencia);
           }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          final Future<Transferencia?> future = Navigator.push(
+          final Future<Transfer?> future = Navigator.push(
             context,
             MaterialPageRoute(builder: (context) {
-              return FormularioTransferencia();
+              return TransferForm();
             }),
           );
           future.then((transferenciaRecebida) {
