@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/components/contact_list.dart';
 import 'package:my_app/components/item_dashboard.dart';
 import 'package:my_app/components/transfer-list.dart';
 
@@ -14,14 +15,14 @@ class Dashboard extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
                 color: Colors.white)),
-        backgroundColor: Colors.black,
+        backgroundColor: const Color.fromRGBO(34, 12, 71, 1),
       ),
       backgroundColor: Colors.white,
       body: GridView.count(crossAxisCount: 2, children: [
         ItemDashboard(
             title: "Transferências",
             icon: Icons.monetization_on,
-            colorBg:  Colors.green,
+            colorBg: const Color.fromRGBO(31, 104, 22, 1),
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => TransferList()));
@@ -29,10 +30,10 @@ class Dashboard extends StatelessWidget {
         ItemDashboard(
             title: "Contatos",
             icon: Icons.contacts,
-            colorBg: Colors.purple,
+            colorBg: const Color.fromRGBO(40, 97, 159, 1),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TransferList()));
+                  MaterialPageRoute(builder: (context) => ContactList()));
             })
       ]),
     );
