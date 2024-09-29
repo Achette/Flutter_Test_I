@@ -1,16 +1,34 @@
-# my_app
+# Projeto Flutter/Dart - 1º Bimestre
 
-A new Flutter project.
+## Descrição
+**1º bimestre da disciplina de Desenvolvimento Mobile**.  
 
-## Getting Started
+## Integrantes da Equipe
+- Igor Carvalho Achete
+- Henrique de Fraia Paschoal
 
-This project is a starting point for a Flutter application.
+## Funcionalidades
+1. **Dashboard**:
+   - Tela inicial com botões para acessar as funcionalidades de **Contatos** e **Transferências**.
+   
+2. **Contatos**:
+   - Cadastro de contatos contendo os seguintes campos:
+     - Nome
+     - Endereço
+     - Telefone
+     - E-mail
+     - CPF
+   - Visualização de contatos cadastrados.
+   - Botão "Adicionar" para cadastrar novos contatos.
 
-A few resources to get you started if this is your first Flutter project:
+3. **Transferências**:
+   - Tela para adicionar e listar transferências de forma similar ao projeto desenvolvido em aula.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Como Executar o Projeto
+1. Clone o repositório:
+```bash
+git clone git@github.com:Achette/Flutter_Test_I.git;
+cd Flutter_Test_I;
+flutter pub get;
+flutter run;
+```
